@@ -12,10 +12,11 @@
 		<script src="js/vue2.js"></script>
 	</head>
 	<body>
-		<section class="todoapp" id="app">
+		<div id="app">
+		<section class="todoapp">
 			<header class="header">
-				<h1>todos</h1>
-				<input class="new-todo" placeholder="What needs to be done?" autofocus v-model="thing" @keyup.enter="add">
+				<h1>{{content.title}}</h1>
+				<input class="new-todo" :placeholder="content.word_1" autofocus v-model="thing" @keyup.enter="add">
 			</header>
 			<!-- This section should be hidden by default and shown when there are todos -->
 			<section class="main">
@@ -45,31 +46,33 @@
 			<!-- This footer should hidden by default and shown when there are todos -->
 			<footer class="footer">
 				<!-- This should be `0 items left` by default -->
-				<span class="todo-count"><strong v-text="restTodo"></strong> item left</span>
+				<span class="todo-count"><strong v-text="restTodo"></strong> {{content.word_2}}</span>
 				<!-- Remove this if you don't implement routing -->
 				<ul class="filters">
 					<li>
-						<a @click="filterList('all')" :class="{selected: isSelected == 'all'}" href="#/">All</a>
+						<a @click="filterList('all')" :class="{selected: isSelected == 'all'}" href="#/">{{content.word_3}}</a>
 					</li>
 					<li>
-						<a @click="filterList('active')" :class="{selected: isSelected == 'active'}" href="#/active">Active</a>
+						<a @click="filterList('active')" :class="{selected: isSelected == 'active'}" href="#/active">{{content.word_4}}</a>
 					</li>
 					<li>
-						<a @click="filterList('completed')" :class="{selected: isSelected == 'completed'}" href="#/completed">Completed</a>
+						<a @click="filterList('completed')" :class="{selected: isSelected == 'completed'}" href="#/completed">{{content.word_5}}</a>
 					</li>
 				</ul>
 				<!-- Hidden if no completed items are left ↓ -->
-				<button class="clear-completed" @click="clearCompleted">Clear completed</button>
+				<button class="clear-completed" @click="clearCompleted">{{content.word_6}}</button>
 			</footer>
 		</section>
 		<footer class="info">
-			<p>Double-click to edit a todo</p>
+			<p>{{content.word_7}}</p>
 			<!-- Remove the below line ↓ -->
-			<p>Template by <a href="http://sindresorhus.com">Sindre Sorhus</a></p>
+			<p>{{content.word_8}}<a href="http://sindresorhus.com">{{content.word_9}}</a></p>
 			<!-- Change this out with your name and url ↓ -->
-			<p>Created by <a href="http://todomvc.com">you</a></p>
-			<p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
+			<p>{{content.word_10}}<a href="https://github.com/littlelittleRonaldo">{{content.word_11}}</a></p>
+			<p>{{content.word_12}}<a href="http://todomvc.com">{{content.word_13}}</a></p>
+			<input type="button" :value="content.word_14" @click="toggleLang" class="tog-button">
 		</footer>
+		</div>
 		<!-- Scripts here. Don't remove ↓ -->
 		<!-- <script src="node_modules/todomvc-common/base.js"></script> -->
 		<script src="js/app.js"></script>

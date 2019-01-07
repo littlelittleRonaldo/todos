@@ -377,3 +377,18 @@ html .clear-completed:active {
 		bottom: 10px;
 	}
 }
+
+/* 
+	切换语言按钮
+*/
+.tog-button {
+	border: 1px solid #cccccc;
+	border-radius: 2px;
+	color: #fff;
+	cursor: pointer;
+	background: white linear-gradient(180deg, #7696c0 0%, #1f8be2 100%);
+	padding: 10px;
+}
+.tog-button:hover {
+	background: white linear-gradient(0deg, #7696c0 0%, #1f8be2 100%)
+}
